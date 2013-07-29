@@ -1,0 +1,51 @@
+#!/usr/bin/env sh
+# )A( - Andromeda
+#
+# startApp wrapper
+#
+# (c) 2010-2013 Luca Cappelletti <luca.cappelletti@gmail.com>
+#
+# copyleft GNU/GPL all rights reserved
+#
+# do not forget now you have .cache/Volatile full private temp folder service
+# made by startApp
+
+options="$@"
+
+APP_NAME=Springseed
+APP_RELEASE=GIT29072013
+APP_KERNEL=Linux
+APP_OS=Debian7
+APP_PLATFORM=ia32
+
+APP_BIN=Springseed
+
+APP_ROOT=io$APP_NAME$APP_RELEASE-$APP_OS
+SANDBOX_HOME=$APP_NAME
+
+
+export LD_LIBRARY_PATH=/home/$APP_NAME/.App/$APP_ROOT/$APP_KERNEL-$APP_PLATFORM/support:/home/$APP_NAME/.App/$APP_ROOT/$APP_KERNEL-$APP_PLATFORM/lib:$LD_LIBRARY_PATH
+export PATH=/home/$APP_NAME/.App/$APP_ROOT/$APP_KERNEL-$APP_PLATFORM/bin:$PATH
+
+cd $HOME
+
+if [ -f /home/$APP_NAME/.App/$APP_ROOT/$APP_KERNEL-$APP_PLATFORM/bin/$APP_BIN.gz ]
+then
+
+
+	cd /home/$APP_NAME/.App/$APP_ROOT/$APP_KERNEL-$APP_PLATFORM/bin
+	gunzip ./$APP_BIN.gz
+	wait
+
+
+else
+
+:
+
+fi
+
+cd $HOME
+
+dbus-launch --exit-with-session /home/$APP_NAME/.App/$APP_ROOT/$APP_KERNEL-$APP_PLATFORM/bin/$APP_BIN $options
+
+

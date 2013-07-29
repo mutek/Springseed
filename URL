@@ -1,0 +1,7 @@
+export LC_ALL=C
+git clone https://github.com/consindo/notes.git
+
+# NodeWebKit 
+# https://github.com/rogerwang/node-webkit
+# https://s3.amazonaws.com/node-webkit/v0.6.3/node-webkit-v0.6.3-linux-ia32.tar.gz
+# https://s3.amazonaws.com/node-webkit/v0.6.3/node-webkit-v0.6.3-linux-x64.tar.gz

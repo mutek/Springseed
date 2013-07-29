@@ -1,0 +1,10 @@
+APP_NAME=Springseed
+APP_RELEASE=GIT29072013
+APP_KERNEL=Linux
+APP_OS=Debian7
+APP_PLATFORM=ia32
+
+APP_BIN=startApp
+
+APP_ROOT=ioSpringseedGIT29072013-Debian7/Linux-ia32
+
